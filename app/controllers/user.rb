@@ -19,7 +19,7 @@ get '/user' do
 end
 
 get '/login' do
-  "Hello World"
+  erb :'user/login'
 end
 
 get '/logout' do
