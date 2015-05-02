@@ -2,7 +2,7 @@ get '/user' do
   if current_user == nil
     redirect('/login')
   else
-    'user page'
+    erb :'user/show'
   end
 end
 

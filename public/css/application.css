@@ -47,10 +47,16 @@ a:hover {
   text-align: center;
 }
 
-.sort_by {
+.heading {
   margin: 20px auto;
+  width: 600px;
+  vertical-align: bottom;
+}
+
+.sort_by {
+  padding: 20px 20px 0px 20px;
+  margin: 0px auto;
   width: 800px;
-  padding: 0px 20px 20px 20px;
 }
 
 .title {
