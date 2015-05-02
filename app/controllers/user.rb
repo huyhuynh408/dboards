@@ -4,7 +4,7 @@ end
 
 post '/signup' do
   user = User.new(params[:user])
-  password = params[:password]
+  password = params[:password_hash]
 
   if user.valid?
     user.save
