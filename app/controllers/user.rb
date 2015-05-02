@@ -3,11 +3,11 @@ get '/signup' do
 end
 
 post '/signup' do
-  user = User.new(params[:user])
-  password = params[:password_hash]
+  @user = User.new(params[:user])
+  @user.password = params[:password]
 
-  if user.valid?
-    user.save
+  if @user.valid?
+    @user.save!
     redirect("/user")
   else
     redirect("/signup")
