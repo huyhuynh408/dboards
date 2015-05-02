@@ -1,18 +1,46 @@
-th {
-  text-align: left;
+body {
+  background-color: #F0F2EB;
+  color: #794932;
 }
 
-a img {
+nav {
+position: relative;
+background-color: white;
+text-align: right;
+padding: 5px;
+}
+
+nav ul{
+  list-style-type: none;
+  margin: 10px 60px;
+}
+
+a:link {
+  color: #794932;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #794932;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FF4242;
+}
+
+.show img {
   width: 600px;
 }
 
-span img {
+.img-index img {
   width: 250px;
   border: 2px solid black;
-  margin: 10px;
+  margin: 9px;
 }
 
 .container {
+  position: relative;
   margin: 20px auto;
   width: 840px;
   padding: 0px 20px 20px 20px;
@@ -23,4 +51,8 @@ span img {
   margin: 20px auto;
   width: 800px;
   padding: 0px 20px 20px 20px;
+}
+
+.title {
+  font-size: 28px;
 }
