@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>Upload your image here:</h2>
+  <form action="/upload" enctype="multipart/form-data" method="post">
+    <input type="text" name="entry[name]" placeholder="name" /><br>
+    <input type="text" name="entry[description]" placeholder="description" /><br>
+    cohort dropdown<br>
+    phase dropdown<br>
+    language checkboxes<br>
+    <input type="file" name="file" />
+    <input type="submit" value="upload image" />
+  </form>
+</div>
+
+<!-- <form action='/upload' enctype="multipart/form-data" method='POST'>
+    <input name="file" type="file" />
+    <input type="submit" value="Upload" />
+</form> -->
