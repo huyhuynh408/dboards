@@ -1,3 +1,4 @@
 class Coding < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :language
+  belongs_to :entry
 end
