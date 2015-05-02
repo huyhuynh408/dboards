@@ -25,5 +25,11 @@ end
 
 #read
 get '/entry/:id' do
+  @entry = Entry.find_by_id(params[:id])
   erb :'entry/show'
+end
+
+get '/entry/picture/:id' do
+  @entry = Entry.find_by_id(params[:id])
+  erb :'entry/picture'
 end
