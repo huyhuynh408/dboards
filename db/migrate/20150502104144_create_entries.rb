@@ -6,6 +6,7 @@ class CreateEntries < ActiveRecord::Migration
       t.belongs_to :user
       t.belongs_to :cohort
       t.belongs_to :phase
+      t.timestamps
     end
   end
 end
