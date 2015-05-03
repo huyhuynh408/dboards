@@ -3,7 +3,8 @@
 </div>
 
 <div class="container">
-  <form action="/upload" enctype="multipart/form-data" method="post">
+  <form action="/edit" method="post">
+    <input type="hidden" name="_method" value="put">
     <input type="text" name="entry[name]" placeholder="name" value="<%= @entry.name %>" /><br>
     <input type="text" name="entry[description]" placeholder="description" value="<%= @entry.description %>" /><br>
     <select name="cohort">
@@ -15,18 +16,27 @@
         <% end %>
       <% end %>
     </select><br>
+
     <select name="phase">
-        <option>Phase</option>
       <% @phases.each do |phase| %>
-        <option value="<%= phase.name %>"><%= phase.name %></option>
+        <% if phase.name == @entry.phase.name %>
+          <option selected="selected"><%= @entry.phase.name %></option>
+        <% else %>
+          <option value="<%= phase.name %>"><%= phase.name %></option>
+        <% end %>
       <% end %>
     </select><br>
+
     <select name="language">
-        <option>Languages</option>
       <% @languages.each do |language| %>
-        <option value="<%= language.name %>"><%= language.name %></option>
+        <% if language.name == @entry.languages.name %>
+          <option selected="selected">dddd</option>
+        <% else %>
+          <option value="<%= language.name %>"><%= language.name %></option>
+        <% end %>
       <% end %>
     </select><br>
+
     <input type="submit" value="upload" />
   </form>
 </div>
@@ -36,8 +46,8 @@
 </div>
 
 <div class="container">
-  <form action="/upload" method="post">
-    <input type="hidden" name="_method" value="put">
+  <form action="/delete/<%= @entry.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
     <input type="submit" value="delete">
   </form>
 </div>

@@ -56,3 +56,13 @@ get '/edit/:id' do
   @phases     = Phase.all
   erb :'entry/edit'
 end
+
+put '/edit' do
+  "Hello World"
+end
+
+#delete
+delete '/delete/:id' do
+  Entry.find_by_id(params[:id]).destroy
+  redirect("/")
+end
