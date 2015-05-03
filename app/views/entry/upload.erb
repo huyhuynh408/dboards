@@ -6,17 +6,20 @@
   <form action="/upload" enctype="multipart/form-data" method="post">
     <input type="text" name="entry[name]" placeholder="name" /><br>
     <input type="text" name="entry[description]" placeholder="description" /><br>
-    Cohort: <select name="cohort">
+    <select name="cohort">
+      <option>Cohort</option>
       <% @cohorts.each do |cohort| %>
         <option value="<%= cohort.name %>"><%= cohort.name %></option>
       <% end %>
     </select><br>
-    Phase: <select name="phase">
+    <select name="phase">
+        <option>Phase</option>
       <% @phases.each do |phase| %>
         <option value="<%= phase.name %>"><%= phase.name %></option>
       <% end %>
     </select><br>
-    Language: <select name="language">
+    <select name="language">
+      <option>Languages</option>
       <% @languages.each do |language| %>
         <option value="<%= language.name %>"><%= language.name %></option>
       <% end %>

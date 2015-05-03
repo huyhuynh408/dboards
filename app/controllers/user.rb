@@ -16,6 +16,7 @@ post '/signup' do
 
   if @user.valid?
     set_user(params[:user][:name])
+    set_user_id(@user.id)
     @user.save!
     redirect("/user")
   else
@@ -32,6 +33,7 @@ post '/login' do
   redirect("/login") if @user == nil
   if @user.password == params[:password]
     set_user(@user.name)
+    set_user_id(@user.id)
     redirect("/user")
   else
     redirect("/login")
@@ -40,5 +42,6 @@ end
 
 get '/logout' do
   set_user(nil)
+  set_user_id(nil)
   redirect("/")
 end
