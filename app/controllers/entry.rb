@@ -4,10 +4,16 @@ require 'fileutils'
 
 #upload
 get '/upload' do
+  @cohorts = Cohort.all
+  @languages = Language.all
+  @phases = Phase.all
   erb :'entry/upload'
 end
 
 post '/upload' do
+
+  phase_id = Phase.find_by_name(params[:phase])
+
   if params[:file]
     entry = Entry.create(params[:entry])
 

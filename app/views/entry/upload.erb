@@ -1,13 +1,28 @@
+<div class="heading">
+  <h2>Make new entry</h2>
+</div>
+
 <div class="container">
-  <h2>Upload your image here:</h2>
   <form action="/upload" enctype="multipart/form-data" method="post">
     <input type="text" name="entry[name]" placeholder="name" /><br>
     <input type="text" name="entry[description]" placeholder="description" /><br>
-    cohort dropdown<br>
-    phase dropdown<br>
-    language checkboxes<br>
+    Cohort: <select name="cohort">
+      <% @cohorts.each do |cohort| %>
+        <option value="<%= cohort.name %>"><%= cohort.name %></option>
+      <% end %>
+    </select><br>
+    Phase: <select name="phase">
+      <% @phases.each do |phase| %>
+        <option value="<%= phase.name %>"><%= phase.name %></option>
+      <% end %>
+    </select><br>
+    Language: <select name="language">
+      <% @languages.each do |language| %>
+        <option value="<%= language.name %>"><%= language.name %></option>
+      <% end %>
+    </select><br>
     <input type="file" name="file" />
-    <input type="submit" value="upload image" />
+    <input type="submit" value="upload" />
   </form>
 </div>
 
