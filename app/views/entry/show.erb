@@ -1,5 +1,6 @@
 <div class="heading">
   <h2><%= @entry.name %></h2>
+  <p><%= @entry.description %></p>
 </div>
 <div class="container">
   <span class="show">
@@ -7,10 +8,9 @@
       <img src="/uploads/<%= @entry.id %>/1.png" />
     </a>
   </span><br>
-  <span>Description:</span>
   <span>Cohort:</span>
   <span>Phase:</span>
   <span>Languages:</span>
-  <span>Date:</span>
-  edit/delete
+  <span>Date:</span><br>
+  <a href="/edit/<%=@entry.id %>">Edit/Delete</a>
 </div>

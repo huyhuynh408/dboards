@@ -3,6 +3,10 @@ body {
   color: #794932;
 }
 
+.heading p {
+  font-size: 20px;
+}
+
 nav {
 position: relative;
 background-color: white;

@@ -2,7 +2,7 @@ include FileUtils::Verbose
 require 'fileutils'
 
 
-#upload
+#create
 get '/upload' do
   @cohorts    = Cohort.all
   @languages  = Language.all
@@ -46,4 +46,13 @@ end
 get '/entry/picture/:id' do
   @entry = Entry.find_by_id(params[:id])
   erb :'entry/picture'
+end
+
+#update
+get '/edit/:id' do
+  @entry = Entry.find_by_id(params[:id])
+  @cohorts    = Cohort.all
+  @languages  = Language.all
+  @phases     = Phase.all
+  erb :'entry/edit'
 end
