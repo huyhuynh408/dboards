@@ -11,12 +11,11 @@ get '/signup' do
 end
 
 post '/signup' do
-  @user = User.new(params[:user])
+  @user          = User.new(params[:user])
   @user.password = params[:password]
 
   if @user.valid?
-    set_user(params[:user][:name])
-    set_user_id(@user.id)
+    set_user(params[:user][:name], @user.id)
     @user.save!
     redirect("/user")
   else
@@ -32,8 +31,7 @@ post '/login' do
   @user = User.find_by_email(params[:email])
   redirect("/login") if @user == nil
   if @user.password == params[:password]
-    set_user(@user.name)
-    set_user_id(@user.id)
+    set_user(@user.name, @user.id)
     redirect("/user")
   else
     redirect("/login")
@@ -41,7 +39,6 @@ post '/login' do
 end
 
 get '/logout' do
-  set_user(nil)
-  set_user_id(nil)
+  clear_user
   redirect("/")
 end
