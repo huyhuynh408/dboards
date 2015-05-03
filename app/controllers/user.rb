@@ -1,4 +1,5 @@
-get '/user' do
+get '/user/:id' do
+  @user = User.find_by_id(params[:id])
   if current_user == nil
     redirect('/login')
   else
@@ -17,7 +18,7 @@ post '/signup' do
   if @user.valid?
     set_user(params[:user][:name], @user.id)
     @user.save!
-    redirect("/user")
+    redirect("/user/#{@user.id}")
   else
     redirect("/signup")
   end
@@ -32,7 +33,7 @@ post '/login' do
   redirect("/login") if @user == nil
   if @user.password == params[:password]
     set_user(@user.name, @user.id)
-    redirect("/user")
+    redirect("/user/#{@user.id}")
   else
     redirect("/login")
   end

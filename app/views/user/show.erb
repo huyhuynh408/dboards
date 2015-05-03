@@ -1,3 +1,13 @@
 <div class="heading">
   <h2>User profile</h2>
 </div>
+
+<% @user.entries.each do |entry| %>
+  <div class="container">
+   <%= entry.name %>
+ </div>
+<% end %>
+
+<div class="heading">
+  <h2>Saved entries</h2>
+</div>

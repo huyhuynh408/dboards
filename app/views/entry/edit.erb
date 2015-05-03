@@ -29,8 +29,8 @@
 
     <select name="language">
       <% @languages.each do |language| %>
-        <% if language.name == @entry.languages.name %>
-          <option selected="selected">dddd</option>
+        <% if language.name == @entry.languages.first.name %>
+          <option selected="selected"><%= language.name %></option>
         <% else %>
           <option value="<%= language.name %>"><%= language.name %></option>
         <% end %>
