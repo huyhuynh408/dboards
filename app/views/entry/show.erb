@@ -1,16 +1,19 @@
 <div class="heading">
   <h2><%= @entry.name %></h2>
   <p><%= @entry.description %></p>
+  <p>User: <%= @entry.user.name.capitalize %></p>
 </div>
 <div class="container">
   <span class="show">
     <a href="/entry/picture/<%= @entry.id %>">
       <img src="/uploads/<%= @entry.id %>/1.png" />
     </a>
-  </span><br>
-  <span>Cohort:</span>
-  <span>Phase:</span>
-  <span>Languages:</span>
-  <span>Date:</span><br>
-  <a href="/edit/<%=@entry.id %>">Edit/Delete</a>
+  </span><br><br>
+  <span>Cohort: <strong><%= @entry.cohort.name %></strong> | </span>
+  <span>Phase: <strong><%= @entry.phase.name %></strong> | </span>
+  <span>Languages: <strong><%= @entry.languages.name %></strong> | </span>
+  <span>Date: </span><br><br>
+  <% if current_user == @entry.user.name %>
+    <a href="/edit/<%=@entry.id %>">Edit/Delete</a>
+  <% end %>
 </div>

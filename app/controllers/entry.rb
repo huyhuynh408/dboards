@@ -54,7 +54,12 @@ get '/edit/:id' do
   @cohorts    = Cohort.all
   @languages  = Language.all
   @phases     = Phase.all
-  erb :'entry/edit'
+
+  if current_user == @entry.user.name
+    erb :'entry/edit'
+  else
+    erb :'entry/error'
+  end
 end
 
 put '/edit' do
