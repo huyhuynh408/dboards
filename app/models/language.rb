@@ -1,3 +1,4 @@
 class Language < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :codings
+  has_many :entries, through: :codings
 end
