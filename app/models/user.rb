@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :entries
+  has_many :bookmarkings
+  has_many :entries, through: :bookmarkings
 
   validates :name, :email, :password_hash, presence: true
 
