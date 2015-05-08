@@ -16,8 +16,8 @@ post '/signup' do
   @user.password = params[:password]
 
   if @user.valid?
-    set_user(params[:user][:name], @user.id)
     @user.save!
+    set_user(params[:user][:name], @user.id)
     redirect("/user/#{@user.id}")
   else
     redirect("/signup")
@@ -25,7 +25,11 @@ post '/signup' do
 end
 
 get '/login' do
-  erb :'user/login'
+  if request.xhr?
+    erb :'partial/_login_form', layout: false
+  else
+    erb :'user/login'
+  end
 end
 
 post '/login' do
