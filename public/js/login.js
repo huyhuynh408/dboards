@@ -9,7 +9,7 @@ $(document).ready(function(){
 
     request.done(function(response){
       console.log("finished");
-      $('nav ul')
+      $('nav ul').append("hello")
     });
 
   });
