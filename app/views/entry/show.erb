@@ -12,7 +12,6 @@
   <span>Cohort: <strong><%= @entry.cohort.name %></strong> | </span>
   <span>Phase: <strong><%= @entry.phase.name %></strong> | </span>
   <span>Languages: <strong><%= @entry.languages.first.name %></strong> | </span>
-  <span>Date: </span><br><br>
   <% if current_user == @entry.user.name %>
     <a href="/edit/<%=@entry.id %>">Edit/Delete</a>
   <% end %>
