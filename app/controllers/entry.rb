@@ -11,7 +11,7 @@ get '/upload' do
 end
 
 post '/upload' do
-  user_id     = current_user_id
+  p user_id     = current_user_id
   phase_id    = Phase.find_by_name(params[:phase]).id
   cohort_id   = Cohort.find_by_name(params[:cohort]).id
   language_id = Language.find_by_name(params[:language]).id
@@ -20,7 +20,7 @@ post '/upload' do
     entry = Entry.create(params[:entry])
     entry.update_attributes(phase_id:    phase_id, \
                             cohort_id:   cohort_id, \
-                            user_id:     user_id \
+                            user_id:     current_user_id
                            )
 
     Coding.create(entry_id: entry.id, language_id: language_id)

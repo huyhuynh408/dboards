@@ -1,4 +1,5 @@
 Language.create!(name: "Ruby")
+<<<<<<< HEAD
 Language.create!(name: "Sinatra")
 Language.create!(name: "Rails")
 Language.create!(name: "HTML")
@@ -15,6 +16,23 @@ Cohort.create!(name: "Lions")
 Cohort.create!(name: "Tutles")
 Cohort.create!(name: "Ducks")
 Cohort.create!(name: "Bears")
+=======
+Language.create!(name: "JavaScript")
+Language.create!(name: "HTML")
+Language.create!(name: "CSS")
+Language.create!(name: "Rails")
+Language.create!(name: "Python")
+Language.create!(name: "C++")
+Language.create!(name: "Java")
+
+Cohort.create!(name: "Elephants")
+Cohort.create!(name: "Lizards")
+Cohort.create!(name: "Trees")
+Cohort.create!(name: "Cats")
+Cohort.create!(name: "Llamas")
+Cohort.create!(name: "Pies")
+Cohort.create!(name: "Ducks")
+>>>>>>> 2c0fb0f86e678f9ca468d3ad92d668be45b9ef0e
 
 Phase.create!(name: "Phase One")
 Phase.create!(name: "Phase Two")

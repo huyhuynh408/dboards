@@ -25,7 +25,11 @@ post '/signup' do
 end
 
 get '/login' do
-  erb :'user/login'
+  if request.xhr?
+    erb :'partial/_login_form', layout: false
+  else
+    erb :'user/login'
+  end
 end
 
 post '/login' do
