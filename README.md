@@ -1,4 +1,4 @@
-# dboards
+# DBoards
 
 Personal project built in Sinatra over the weekend of week 4 DBC.
 
@@ -18,8 +18,8 @@ DBC is filled with whiteboards that are constantly being used.  Most of the time
 
 This app can also be used to store/tag other items like schemas.
 
-![design](/design.png")
+![design](/public/design.png")
 
 ## Schema
 
-![schema](/schema.png")
+![schema](/public/schema.png")
